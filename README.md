@@ -67,3 +67,11 @@ Our final model is Hybrid Model 2 which provides a balanced recommendation betwe
 ## Live Front-End
 We have a live web-based front-end created through Flask. The engine under the hood is Hybrid Model 2.
 
+**Search Page**
+
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/bryan-santos/images/live1.png)
+
+**Results Page**
+
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/bryan-santos/images/live2.png)
+
