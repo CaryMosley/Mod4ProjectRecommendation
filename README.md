@@ -14,7 +14,7 @@ Our presentation deck is located here: https://docs.google.com/presentation/d/1k
 
 The main issue with recommendation systems based on other user reviews (collaborative-filtering) are cold start and sparsity. As seen in the image below, movies being recommended by traditional movies are skewed towards the popular ones. The goal is to tap into this long tail and be able to recommend quality but less popular movies.
 
-![models](https://github.com/JohnTheTripper/game-sales-FIDS/blob/master/readme_images/models.png)
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/bryan-santos/images/longtail.png)
 
 ## Feature Engineering
 
@@ -27,12 +27,12 @@ The main issue with recommendation systems based on other user reviews (collabor
 
 Genres were included to ensure they play a factor in making the recommendation because chances are, people will like movies in the similar genre
 
-![models](https://github.com/JohnTheTripper/game-sales-FIDS/blob/master/readme_images/models.png)
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/bryan-santos/images/genres.png)
 
 ### Quality Index
 We bucketed ratings in order to get movie clusters based on quality
 
-![models](https://github.com/JohnTheTripper/game-sales-FIDS/blob/master/readme_images/models.png)
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/bryan-santos/images/rating.png)
 
 ### Popularity Index
 We added popularity index based on the count of reviews on each movie
