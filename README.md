@@ -19,6 +19,7 @@ The main issue with recommendation systems based on other user reviews (collabor
 ## Preprocessing and EDA
 
 ### Data Sources
+
 We loaded in various datasets provided by movielens and then ran an API call to grab plot summaries for each of our films. Once we had this we grabbed the union of films where we had movieId and plot summaries as well as dropped the handful of duplicates from our dataset. This resulted in 9573 total films and 100293 total ratings.
 
 ### EDA
@@ -44,7 +45,7 @@ As we showed in our problem statement there is a long-tail in movie popularity.
 
 ![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/longtail.png)
 
-We grouped our fils into ratings buckets of top, average, and low and then created word clouds to see if plot could be useful in classifying our films. Based on these word clouds they will not perform well as the most common words seem to be very similar. 
+We grouped our films into ratings buckets of top, average, and low and then created word clouds to see if plot could be useful in classifying our films. Based on these word clouds they will not perform well as the most common words seem to be very similar. 
 
 ![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/wordcloudtop.png)
 
@@ -74,13 +75,13 @@ The following models were built and compared against each other using different 
 * User-User Filtering
 * Memory-Based Methods (KNN and SVD)
 
-Based on RMSE and Hit-Rate we chose the SVD model as our best collaborative-filtering based model. We will then combine this with our chosen content-based model to create a final hybrid model.
+Based on RMSE and Hit-Rate we chose the SVD model as our best collaborative-filtering based model. RMSE evaluates how far our rating is from the predicted. Hit-rate is a method in which we predict a number of films and then check to see how many if any were present in the user's list. This metric can run into issues with sparsity as if were looking predicting 10 movies and the user has only rated 5 then clearly the max hit rate can be is .5. However this metric is still useful when comparing between models. Next we will combine our SVD Collaborative-Flitering model with our chosen content-based model to create a final hybrid model.
 
 ### Content-Based
 * Bag of Words
 * TF-IDF
 
-We build 4 different classification models to see if TF-IDF combining plot and genre would be enough to group movies into top, average, and low ratings bucket. We used Naive Bayes, Logistic, SGD, and a neural net classifier. The Naive Bayes, SGD and neural net simply classified everything into the majority class, while the logisitic model did make some specific rankings. However, as we saw from the word clouds, plot summary does not seem to be able to classify movie rankings alone. This is in-line with what we would expect and we then moved on to create a content based recommendation system using cosine similarty of our TF-IDF feature.
+We build 4 different classification models to see if TF-IDF combining plot and genre would be enough to group movies into top, average, and low ratings bucket. We used Naive Bayes, Logistic, SGD, and a neural net classifier. The Naive Bayes, SGD and neural net simply classified everything into the majority class, while the logisitic model did make some specific rankings. Although the accuray of the logistic model was lowest, when we look at the confusion matrix we can see that it is creating groupings into these distinct classes. However, as we saw from the word clouds, plot summary does not seem to be able to classify movie rankings alone. This is in-line with what we would expect and we then moved on to create a content based recommendation system using cosine similarty of our TF-IDF feature.
 
 ### Hybrid Models
 * **Hybrid Model 1** - running the TF-IDF model (content-based) first to get initial recommendations then the rating of each one is predicted through our best-performing SVD model (collaborative-filtering) which is then sorted
@@ -93,15 +94,18 @@ Once we built these models we played around using some of our favorite movies to
 
 ## Conclusion and Future Steps
 
-Our final model is Hybrid Model 2 which provides a balanced recommendation between Content-Based and Collaborative-Filtering
+Our final model is our Hybrid Model 1 which gets content-based recommendations and then predicts and sorts the results using our colabortive-filtering SVD model.
 
 ### Next Steps
-* Use the entire movielens dataset (2M) and not just (100k) to be able to cover most movies in the recommendation
+
+* Use the entire movielens dataset (2M) and not just (100k) to be able to cover most movies in the recommendation. Having significantly more ratings will help us avoid being biased towards the preferences of a few power users. We will also have more breadth in the type of movies we cna recommend 
+
 * Add more features and create a better ratings predictor for our hybrid model
-* Compile a user profile that is not solely based on ratings they have made but information about the users themselve
+
+* Compile a user profile that is not solely based on ratings they have made but information about the users themselves.
 
 ## Live Front-End
-We have a live web-based front-end created through Flask. The engine under the hood is Hybrid Model 2.
+We have a live web-based front-end created through Flask. The engine under the hood is Hybrid Model 1.
 
 **Search Page**
 
