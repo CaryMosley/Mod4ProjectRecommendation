@@ -77,6 +77,8 @@ The following models were built and compared against each other using different 
 
 Based on RMSE and Hit-Rate we chose the SVD model as our best collaborative-filtering based model. RMSE evaluates how far our rating is from the predicted. Hit-rate is a method in which we predict a number of films and then check to see how many if any were present in the user's list. This metric can run into issues with sparsity as if were looking predicting 10 movies and the user has only rated 5 then clearly the max hit rate can be is .5. However this metric is still useful when comparing between models. Next we will combine our SVD Collaborative-Flitering model with our chosen content-based model to create a final hybrid model.
 
+We also have a function within our notebook that will take in a new user ratings and then output recommendations.
+
 ### Content-Based
 * Bag of Words
 * TF-IDF
