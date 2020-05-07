@@ -26,11 +26,11 @@ Below we can see the ratings count as well as the distrubtio of ratings. THe mos
 
 ![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/ratings.png)
 
-[models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/ratingsdist.png)
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/ratingsdist.png)
 
 We can see that most users rated only a handful of films with a few super users rating over a thousand. This is likely to introduce bias as our model is going to be very skewed towards the rating preference of these power users.
 
-[models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/userdist.png)
+![models](https://github.com/CaryMosley/Mod4ProjectRecommendation/blob/CaryM/images/userdist.png)
 
 When we examile genre, Film-Noir has the highest rating of all genres followed by War, Documentary and Crime. Comedy and Horror are the lowest rated.
 
