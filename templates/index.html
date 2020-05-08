@@ -474,6 +474,12 @@ figure {
         <form action="{{ url_for('main') }}" method="POST">
             <input type="text" id="movie_name" name="movie_name" placeholder="Enter a full movie name" required />
             <input type="submit" id="submission_button" value="Submit"/>
+            <label for="models">Choose a model:</label>
+
+            <select id="models" name="models">
+              <option value="1">Hybrid 1</option>
+              <option value="2">Hybrid 2</option>
+            </select>
         </form>
         <p style="color: #919191; padding: 1em;">The model uses <b>Hybrid Recommendation Models</b> to find similar movies. The idea is to provide recommendations without bias towards popular movies. We will provide you with <b>hidden gems</b>!  
         <br>
