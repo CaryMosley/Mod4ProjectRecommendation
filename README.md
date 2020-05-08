@@ -102,6 +102,8 @@ Our final model is our Hybrid Model 1 which gets content-based recommendations a
 
 * Use the entire movielens dataset (2M) and not just (100k) to be able to cover most movies in the recommendation. Having significantly more ratings will help us avoid being biased towards the preferences of a few power users. We will also have more breadth in the type of movies we cna recommend 
 
+* Insert dataset into an SQL database for better performance, and more dynamic storage and queries
+
 * Add more features and create a better ratings predictor for our hybrid model
 
 * Compile a user profile that is not solely based on ratings they have made but information about the users themselves.
